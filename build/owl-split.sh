@@ -19,5 +19,6 @@
 # Behaviors
 #
 ./git-subsplit.sh publish --no-tags src/Behaviors/ListDelete:git@github.com:october-widgets/list-delete.git
+./git-subsplit.sh publish --no-tags src/Behaviors/ModalController:git@bitbucket.org:planetadeleste/october-modal-behavior.git
 
 rm -rf .subsplit/
