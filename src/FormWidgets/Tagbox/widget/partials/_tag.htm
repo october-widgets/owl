@@ -8,7 +8,9 @@
     <span data-control="display">
         <?php if (isset($tag)) echo $tag ?>
     </span>
-    <span data-control="remove">
-        <i class="icon-times"></i>
-    </span>
+    <?php if (isset($preview) && !$preview): ?>
+        <span data-control="remove">
+            <i class="icon-times"></i>
+        </span>
+    <?php endif;?>
 </li>
