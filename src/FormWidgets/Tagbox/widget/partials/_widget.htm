@@ -7,17 +7,19 @@
         <?php
         if (isset($tags) && is_array($tags) && $tags) {
             foreach ($tags as $tag)
-                echo $this->makePartial('tag', ['tag' => $tag]);
+                echo $this->makePartial('tag', ['tag' => $tag, 'preview' => $this->previewMode]);
         }
         ?>
-        <li data-control="last">
-            <input data-control="tagbox-input" name="<?= $this->fieldName ?>[]" type="text" placeholder="<?= $placeholder ?>" />
-        </li>
+        <?php if (!$this->previewMode): ?>
+            <li data-control="last">
+                <input data-control="tagbox-input" name="<?= $this->fieldName ?>[]" type="text" placeholder="<?= $placeholder ?>" />
+            </li>
+        <?php endif; ?>
     </ul>
 
     <!-- Tag template -->
     <script type="text/template" data-control="template">
-        <?= $this->makePartial('tag') ?>
+        <?= $this->makePartial('tag', ['preview' => $this->previewMode]) ?>
     </script>
 
     <!-- Initialize tagbox -->
