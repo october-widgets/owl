@@ -65,7 +65,7 @@ class Widget extends FormWidgetBase {
         $parts = explode('\\', strtolower($this->model->hasMany[$fieldName][0]));
 
         // Load relationship model, and configure the widget
-        $relationship = $this->makeConfig("@/plugins/$parts[0]/$parts[1]/models/$parts[3]/fields.yaml");
+        $relationship = $this->makeConfig(plugins_path()."/$parts[0]/$parts[1]/models/$parts[3]/fields.yaml");
         $relationship->model = $this->relatedModel;
         $relationship->alias = $this->alias.$fieldName;
 
